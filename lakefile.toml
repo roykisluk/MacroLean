@@ -1,0 +1,15 @@
+name = "MacroLean"
+defaultTargets = ["CES"]
+
+[leanOptions]
+autoImplicit = false
+
+# Mathlib pinned to the release that matches `lean-toolchain`, so `lake exe cache get` works.
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.35.0"
+
+# One library per model: a folder `<Model>/` and a root file `<Model>.lean` importing its files.
+[[lean_lib]]
+name = "CES"
